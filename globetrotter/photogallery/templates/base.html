@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <div>
+        <ul class="sidebar-nav">
+            <li><a href="{% url 'intro' %}">Antonio</a></li>
+            <li><a href="{% url 'gallery' %}">Photo Gallery</a></li>
+            <li><a href="{% url 'book' %}">Guest Book</a></li>
+        </ul>
+    </div>
+    <div>
+        {% block content %} {% endblock content %}
+    </div>
+</body>
+</html>
