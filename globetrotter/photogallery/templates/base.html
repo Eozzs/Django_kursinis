@@ -7,16 +7,18 @@
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 </head>
-<body>
-    <div>
-        <ul class="sidebar-nav">
-            <li><a href="{% url 'intro' %}">Antonio</a></li>
-            <li><a href="{% url 'gallery' %}">Photo Gallery</a></li>
-            <li><a href="{% url 'book' %}">Guest Book</a></li>
-        </ul>
-    </div>
-    <div>
-        {% block content %} {% endblock content %}
-    </div>
+  <body> 
+    <div class="container-nav">
+        <div class="A">
+          <div class="B">
+            <ul class="sidebar-nav">
+                <li><a href="{% url 'intro' %}">Antonio</a></li>
+                <li><a href="{% url 'my_trips' %}">Trips Gallery</a></li>
+                <li><a href="{% url 'book' %}">Guest Book</a></li>
+            </ul>
+          </div>
+          <div>{% block content %}{% endblock %}</div>
+        </div>
 </body>
 </html>
+

@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% load static %}
+  <div> 
+    <h2> My Trips Around The Globe: </h2>
+    <h2> {{ trips_count }} amazing life experiences...</h2>
+  </div>
+  <div>
+  {% if trips_list_ordered %}
+  <ul>
+    {% for trip in trips_list_ordered %}
+    <li>
+      <ul><a href="{% url 'trip_photos' trip.id %}"> {{ trip.continent }}: Trip to {{ trip.city }}, {{ trip.country }} / {{trip.date}} / </a></ul>
+      <ul><a href="{% url 'trip_photos' trip.id %}"> <img src="{{ trip.cover.url }}" class="" alt="..."></a>
+    </li>
+    {% endfor %}  
+  {% else %}        
+      <p> The list is empty ... </p>
+  {% endif %}
+  </div>
+{% endblock content %}
+
